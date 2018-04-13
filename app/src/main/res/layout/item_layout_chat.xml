@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/half_padding">
+
+  <ImageView
+      android:id="@+id/avatarImageView"
+      android:layout_width="40dp"
+      android:layout_height="40dp"
+      android:layout_gravity="center"
+      android:src="@mipmap/ic_launcher"
+      tools:ignore="ContentDescription"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/half_margin"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <TextView
+          android:id="@+id/chatNameTextView"
+          style="@style/TextAppearance.AppCompat.Subhead"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:textColor="@android:color/black"
+          tools:text="Chat Name"/>
+
+      <TextView
+          android:id="@+id/timestampTextView"
+          style="@style/TextAppearance.AppCompat.Caption"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/common_margin"
+          tools:text="17:50"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <!--Here add 2dp bottom padding  duo to linearLayout measure height
+       measure only text but exclude background ,in order to show all shape background,
+       we should leave enough height before measure-->
+      <TextView
+          android:id="@+id/lastMessageTextView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:paddingBottom="2dp"
+          tools:text="This is the last message."/>
+
+      <TextView
+          android:id="@+id/unreadCountTextView"
+          style="@style/TextAppearance.AppCompat.Caption"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="@dimen/common_margin"
+          android:background="@drawable/bg_unread_message"
+          android:gravity="center"
+          android:textColor="@android:color/white"
+          tools:text="99"/>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>
