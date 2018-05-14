@@ -8,4 +8,20 @@
     <item name="colorAccent">@color/colorAccent</item>
   </style>
 
+  <style name="InputImageStyle">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:layout_marginStart">@dimen/common_margin</item>
+    <item name="android:layout_marginEnd">@dimen/common_margin</item>
+  </style>
+
+  <style name="InputTextStyle" parent="@style/TextAppearance.AppCompat.Caption">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:layout_margin">@dimen/half_margin</item>
+    <item name="android:drawablePadding">@dimen/half_padding</item>
+    <item name="android:gravity">center_horizontal</item>
+  </style>
 </resources>

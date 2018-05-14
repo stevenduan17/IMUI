@@ -1,15 +1,19 @@
 package com.steven.imui
 
+import android.Manifest
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
-import android.view.MenuItem
+import android.util.Log
 import android.view.View
 import com.steven.imui.adapter.ChatAdapter
 import com.steven.imui.bean.Chat
 import kotlinx.android.synthetic.main.activity_chat_list.*
+import me.weyye.hipermission.HiPermission
+import me.weyye.hipermission.PermissionCallback
+import me.weyye.hipermission.PermissionItem
 
 /**
  * 会话列表
@@ -20,28 +24,49 @@ import kotlinx.android.synthetic.main.activity_chat_list.*
  */
 class ChatListActivity : AppCompatActivity() {
 
+  @Suppress("PrivatePropertyName")
+  private val TAG = ChatListActivity::class.java.simpleName
   private val mAdapter: ChatAdapter by lazy { ChatAdapter() }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_chat_list)
 
-    supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-    mRecyclerView.setHasFixedSize(true)
-    mRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-    mRecyclerView.layoutManager = LinearLayoutManager(this)
-    mRecyclerView.adapter = mAdapter
-    initData()
-  }
+    val permissions = mutableListOf(
+        PermissionItem(Manifest.permission.WRITE_EXTERNAL_STORAGE, getString(R.string.permission_storage), R.drawable.permission_ic_storage),
+        PermissionItem(Manifest.permission.RECORD_AUDIO, getString(R.string.permission_audio_record), R.drawable.permission_ic_micro_phone)
+    )
+    HiPermission.create(this)
+        .title(getString(R.string.permission_request_title))
+        .msg(getString(R.string.permission_desc))
+        .permissions(permissions)
+        .style(R.style.PermissionDefaultNormalStyle)
+        .animStyle(R.style.PermissionAnimFade)
+        .checkMutiPermission(object : PermissionCallback {
+          override fun onFinish() {
+            Log.d(TAG, "All permission are granted.")
+            initData()
+          }
 
-  override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-    if (item!!.itemId == android.R.id.home) {
-      onBackPressed()
-    }
-    return super.onOptionsItemSelected(item)
+          override fun onDeny(permission: String?, position: Int) {
+            Log.d(TAG, "Some permissions have been denied.")
+          }
+
+          override fun onGuarantee(permission: String?, position: Int) {
+          }
+
+          override fun onClose() {
+            Log.d(TAG, "Permission check has been closed.")
+          }
+        })
   }
 
   private fun initData() {
+    mRecyclerView.setHasFixedSize(true)
+    mRecyclerView.addItemDecoration(DividerItemDecoration(this@ChatListActivity, DividerItemDecoration.VERTICAL))
+    mRecyclerView.layoutManager = LinearLayoutManager(this@ChatListActivity)
+    mRecyclerView.adapter = mAdapter
+
     val list = mutableListOf(
         Chat("01", "Steven", "Nice to meet u!", 2, System.currentTimeMillis()),
         Chat("02", "Kevin", "Do u want 2 play basketball tonight?", 10, System.currentTimeMillis() - 30000),

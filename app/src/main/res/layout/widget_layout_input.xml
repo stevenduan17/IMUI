@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="vertical">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/bg_white_with_bottom_border"
+      android:orientation="horizontal"
+      android:padding="@dimen/quarter_padding">
+
+    <ImageView
+        android:id="@+id/mAudioImageView"
+        style="@style/InputImageStyle"
+        android:src="@drawable/input_ic_audio"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/mKeyboardImageView"
+        style="@style/InputImageStyle"
+        android:src="@drawable/input_ic_keyboard"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"/>
+
+    <com.steven.imui.widget.RecordingButton
+        android:id="@+id/mRecordButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/quarter_margin"
+        android:layout_marginTop="@dimen/quarter_margin"
+        android:layout_weight="1"
+        android:background="@drawable/input_selector_audio_button"
+        android:minHeight="38dp"
+        android:text="@string/tap_to_speak"
+        android:textColor="@color/middleGrey"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/mInputEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:inputType="textMultiLine"
+        android:maxHeight="80dp"
+        tools:ignore="LabelFor"/>
+
+    <ImageView
+        android:id="@+id/mShowMoreImageView"
+        style="@style/InputImageStyle"
+        android:src="@drawable/input_ic_more"
+        tools:ignore="ContentDescription"/>
+
+    <ImageView
+        android:id="@+id/mSendImageView"
+        style="@style/InputImageStyle"
+        android:src="@drawable/input_ic_send"
+        android:visibility="gone"
+        tools:ignore="ContentDescription"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/mMoreLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      android:orientation="horizontal"
+      android:padding="@dimen/quarter_padding"
+      android:visibility="gone">
+
+    <TextView
+        android:id="@+id/mImageTextView"
+        style="@style/InputTextStyle"
+        android:drawableTop="@drawable/input_ic_image"
+        android:text="@string/image"/>
+
+    <TextView
+        android:id="@+id/mLocationTextView"
+        style="@style/InputTextStyle"
+        android:drawableTop="@drawable/input_ic_location"
+        android:text="@string/location"/>
+
+    <TextView
+        android:id="@+id/mFileTextView"
+        style="@style/InputTextStyle"
+        android:drawableTop="@drawable/input_ic_file"
+        android:text="@string/file"/>
+
+    <TextView
+        android:id="@+id/mVideoTextView"
+        style="@style/InputTextStyle"
+        android:drawableTop="@drawable/input_ic_video"
+        android:text="@string/short_video"/>
+  </LinearLayout>
+</LinearLayout>

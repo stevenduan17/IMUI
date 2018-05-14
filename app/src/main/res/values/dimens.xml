@@ -5,4 +5,5 @@
   <dimen name="half_padding">8dp</dimen>
   <dimen name="half_margin">8dp</dimen>
   <dimen name="quarter_padding">4dp</dimen>
+  <dimen name="quarter_margin">4dp</dimen>
 </resources>
