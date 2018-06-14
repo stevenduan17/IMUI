@@ -12,7 +12,7 @@ And here are the interactive mode audio recorder like WeChat.[See the video](htt
 
 ###Lisence
     
-    	Copyright 2018 Steven Duan
+    Copyright 2018 Steven Duan
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
