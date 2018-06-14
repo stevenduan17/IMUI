@@ -1,5 +1,5 @@
 # IMUI
-A common resolution for im, include chatlist, messagelist, record audio/vido record etc,continue to uodate.
+A common resolution for im, include chatlist, messagelist, record audio/vido record etc,continue to update.
 
 ### Description
 As we known, there are so many IM tools in our day-life,everywhere. Maybe you have used one of theses: WeChat 、 QQ 、Line 、Messager etc. Be a app developer, we may some im-like function for products. Now,a beautiful IM UI here for you! 
@@ -7,7 +7,7 @@ As we known, there are so many IM tools in our day-life,everywhere. Maybe you ha
 ### Screen shots
 ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102548.png) ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102630.png) ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102649.png) ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102716.png) ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102743.png) ![]( https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-103148.png) ![](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-103207.png)
 
-And here are the interactive mode audio recorder like WeChat.![See the video](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102837.mp4)
+And here are the interactive mode audio recorder like WeChat.[See the video](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102837.mp4)
 
 
 ###Lisence
