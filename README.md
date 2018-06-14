@@ -10,7 +10,7 @@ As we known, there are so many IM tools in our day-life,everywhere. Maybe you ha
 And here are the interactive mode audio recorder like WeChat.[See the video](https://github.com/stevenduan17/IMUI/blob/master/screen-shoot/device-2018-06-14-102837.mp4)
 
 
-### Lisence
+### License
     
     Copyright 2018 Steven Duan
 
