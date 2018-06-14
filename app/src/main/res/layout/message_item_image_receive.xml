@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/common_margin"
+    android:orientation="vertical">
+
+  <include
+      layout="@layout/message_slice_timestamp"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingEnd="@dimen/half_padding"
+      android:paddingStart="@dimen/half_padding">
+
+    <include
+        android:id="@+id/avatarLayout"
+        layout="@layout/message_slice_avatar_layout"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/half_margin"
+        android:orientation="vertical">
+
+      <include
+          layout="@layout/message_slice_name"/>
+
+      <android.support.v7.widget.CardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="@dimen/quarter_margin">
+
+        <ImageView
+            android:id="@+id/mImageView"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            tools:ignore="ContentDescription"
+            tools:src="@mipmap/ic_launcher"/>
+      </android.support.v7.widget.CardView>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

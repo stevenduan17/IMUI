@@ -5,4 +5,5 @@
   <color name="colorAccent">#26A69A</color>
   <color name="middleGrey">#707070</color>
   <color name="lightGrey">#f0f0f0</color>
+  <color name="color_message_send">#7bf17b</color>
 </resources>

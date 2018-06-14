@@ -78,6 +78,6 @@ class ChatListActivity : AppCompatActivity() {
     Handler().postDelayed({
       mAdapter.setList(list)
       mLoadingLayout.visibility = View.GONE
-    }, 3000)
+    }, 1000)
   }
 }

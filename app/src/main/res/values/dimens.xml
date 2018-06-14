@@ -6,4 +6,5 @@
   <dimen name="half_margin">8dp</dimen>
   <dimen name="quarter_padding">4dp</dimen>
   <dimen name="quarter_margin">4dp</dimen>
+  <dimen name="message_max_width">240dp</dimen>
 </resources>
