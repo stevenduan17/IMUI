@@ -11,9 +11,17 @@ class GlideZoom(private val imageView: ImageView) : SimpleTarget<Bitmap>() {
   override fun onResourceReady(bitmap: Bitmap, transition: Transition<in Bitmap>?) {
     val width = bitmap.width
     val height = bitmap.height
-    val imageViewWidth = Math.min(IMAGE_SIZE, width)
-    val zoom = imageViewWidth.toFloat() / width.toFloat()
-    val imageViewHeight = (height * zoom).toInt()
+    val imageViewHeight: Int
+    val imageViewWidth: Int
+    if (width >= height) {
+      imageViewWidth = Math.min(IMAGE_SIZE, width)
+      val zW = imageViewWidth.toFloat() / width.toFloat()
+      imageViewHeight = (height * zW).toInt()
+    } else {
+      imageViewHeight = Math.min(height, IMAGE_SIZE)
+      val zH = imageViewHeight.toFloat() / height.toFloat()
+      imageViewWidth = (width * zH).toInt()
+    }
     val params = imageView.layoutParams
     params.height = imageViewHeight
     params.width = imageViewWidth
